@@ -28,15 +28,16 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 
 const Navbar = () => {
   const {
+    currentColor,
     activeMenu,
     setActiveMenu,
-    isClicked,
-    setIsClicked,
     handleClick,
-    screenSize,
+    isClicked,
     setScreenSize,
-    currentColor,
+    screenSize,
   } = useStateContext();
+
+  console.log(isClicked);
 
   useEffect(() => {
     const handleScreenSize = () => setScreenSize(window.innerWidth);
@@ -91,7 +92,7 @@ const Navbar = () => {
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => {
-              /* handleClick("userProfile") */
+              handleClick("userProfile");
             }}
           >
             <img src={avatar} className="rounded-full w-8 h-8" alt="user-profile" />
