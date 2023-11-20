@@ -2597,7 +2597,7 @@ export const scheduleData = [
     Location: "Space Center USA",
     StartTime: "2023-01-10T04:00:00.000Z",
     EndTime: "2023-01-10T05:30:00.000Z",
-    CategoryColor: "#1aaa55",
+    CategoryColor: "#FF8F8F",
   },
   {
     Id: 2,
