@@ -1,9 +1,38 @@
-import React from 'react'
+import React from "react";
+import { Header } from "../components";
+import {
+  ScheduleComponent,
+  Day,
+  Week,
+  WorkWeek,
+  Month,
+  Agenda,
+  Inject,
+  ViewsDirective,
+  ViewDirective,
+} from "@syncfusion/ej2-react-schedule";
+import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
+
+import { scheduleData } from "../data/dummy";
 
 const Calender = () => {
   return (
-    <div>Calender</div>
-  )
-}
+    <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+      <Header title="Calender" category="App" />
+      <ScheduleComponent
+        height="650px"
+        eventSettings={{ dataSource: scheduleData }}
+        selectedDate={new Date(2023, 0, 10)}
+      >
+        <ViewsDirective>
+          {["Day", "Week", "WorkWeek", "Month", "Agenda"].map((item) => (
+            <ViewDirective key={item} option={item} />
+          ))}
+        </ViewsDirective>
+        <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+      </ScheduleComponent>
+    </div>
+  );
+};
 
-export default Calender
+export default Calender;
